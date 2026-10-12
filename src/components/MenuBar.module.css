@@ -1,0 +1,168 @@
+.menuBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    background: linear-gradient(
+        to bottom,
+        #fdfdfd 0%,
+        #ececec 40%,
+        #d7d7d7 100%
+    );
+    border-bottom: 1px solid #8c8c8c;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    z-index: 1000;
+    font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+    user-select: none;
+}
+
+.leftSide,
+.rightSide {
+    display: flex;
+    align-items: center;
+}
+
+.leftSide {
+    height: 100%;
+    gap: 3px;
+}
+
+.rightSide {
+    gap: 10px;
+}
+
+.menuGroup {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.menuButton {
+    height: 22px;
+    padding: 0 7px;
+    border: 0;
+    border-radius: 3px;
+    background: transparent;
+    color: #222;
+    font: inherit;
+    font-size: 12px;
+    white-space: nowrap;
+    cursor: default;
+}
+
+.menuButton:hover,
+.menuButton:focus-visible,
+.selected {
+    background: rgba(70, 130, 220, 0.28);
+    outline: none;
+}
+
+.appleButton {
+    width: 27px;
+    padding: 0;
+    font-size: 16px;
+}
+
+.activeApp {
+    padding: 0 7px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.dropdown {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    min-width: 175px;
+    padding: 4px;
+    background: rgba(248, 248, 248, 0.98);
+    border: 1px solid #8a8a8a;
+    border-radius: 5px;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.28);
+    z-index: 1100;
+    backdrop-filter: blur(12px);
+}
+
+.dropdownItem {
+    display: block;
+    width: 100%;
+    padding: 6px 10px;
+    border: 0;
+    border-radius: 3px;
+    background: transparent;
+    color: #222;
+    font: inherit;
+    font-size: 12px;
+    text-align: left;
+    white-space: nowrap;
+    cursor: default;
+}
+
+.dropdownItem:hover,
+.dropdownItem:focus-visible {
+    background: #4778bd;
+    color: white;
+    outline: none;
+}
+
+.separator {
+    height: 1px;
+    margin: 4px 5px;
+    background: #c9c9c9;
+}
+
+.icon {
+    font-size: 13px;
+    line-height: 1;
+}
+
+.clock {
+    width: 70px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.dismissLayer {
+    position: fixed;
+    inset: 25px 0 0;
+    z-index: -1;
+    border: 0;
+    background: transparent;
+}
+
+@media (max-width: 650px) {
+    .menuBar {
+        padding: 0 5px;
+    }
+
+    .leftSide {
+        gap: 0;
+    }
+
+    .menuButton {
+        padding: 0 4px;
+        font-size: 11px;
+    }
+
+    .activeApp {
+        padding: 0 4px;
+        font-size: 11px;
+    }
+
+    .rightSide {
+        gap: 5px;
+    }
+
+    .icon {
+        display: none;
+    }
+}

@@ -1,0 +1,127 @@
+.dock {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    width: max-content;
+    max-width: calc(100vw - 24px);
+    overflow-x: auto;
+    padding: 14px 16px 9px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    background: linear-gradient(
+        to bottom,
+        rgba(245, 250, 255, 0.96),
+        rgba(155, 177, 197, 0.96) 48%,
+        rgba(75, 95, 115, 0.98)
+    );
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(12px);
+}
+
+.dockItem {
+    position: relative;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    width: 72px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    transform: scale(1);
+    transform-origin: bottom center;
+    transition: transform 160ms ease-out;
+}
+
+.icon {
+    display: block;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
+    transition: transform 120ms ease;
+}
+
+.magnified {
+    transform: scale(1.35);
+    z-index: 2;
+}
+
+.neighbor {
+    transform: scale(1.15);
+    z-index: 1;
+}
+
+.nearNeighbor {
+    transform: scale(1.06);
+}
+
+.label {
+    max-width: 88px;
+    overflow: hidden;
+    color: white;
+    font: 11px/1.2 Arial, sans-serif;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95);
+}
+
+.indicator {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #263746;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
+}
+
+.separator {
+    align-self: stretch;
+    flex: 0 0 1px;
+    margin: 0 3px;
+    background: rgba(35, 48, 60, 0.5);
+    box-shadow: 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.minimizedIcon {
+    width: 52px;
+    height: 52px;
+    opacity: 0.9;
+}
+
+.minimizedItem {
+    width: 60px;
+}
+
+@media (max-width: 600px) {
+    .dock {
+        gap: 5px;
+        padding: 9px 8px 6px;
+    }
+
+    .dockItem {
+        width: 48px;
+    }
+
+    .icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .minimizedIcon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .minimizedItem {
+        width: 42px;
+    }
+
+    .label {
+        max-width: 48px;
+        font-size: 9px;
+    }
+}
